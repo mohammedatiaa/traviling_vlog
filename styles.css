@@ -84,7 +84,7 @@
     width: 250px;
     opacity: 1;
     background-color: #825c3b;
-    
+    border-radius: 5px;
 }
 
 .search-bar svg {
@@ -93,6 +93,56 @@
     cursor: pointer;
     color: white;
 }
+
+
+
+.suggestions-box {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 92.5%;
+    background: white;
+    border: 1px solid #ccc;
+    border-top: none;
+    display: none;
+    z-index: 1000;
+    border-radius: 0 0 8px 8px; 
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+    max-height: 200px; 
+    overflow-y: auto; 
+    overflow-x: hidden; 
+    scrollbar-width: none;
+}
+
+
+.suggestion {
+    position: relative;
+    cursor: pointer;
+    font-size: 12px;
+    /* padding: 10px 15px;  */
+    border-bottom: 1px solid #eee;
+    width: 100%;
+    white-space: nowrap; 
+    overflow: hidden;
+    text-overflow: ellipsis; 
+    background-color: white;
+    transition: background 0.3s ease-in-out;
+    height: 40px; 
+    line-height: 40px; 
+}
+
+
+.suggestion:last-child {
+    border-bottom: none;
+}
+
+
+.suggestion:hover {
+    background-color: #f8f9fa;
+}
+
+
+
 
 /* page logo  */
 .logo a{
@@ -336,6 +386,10 @@ img {
     /* box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);  */
 }
 
+.gallary-post-section a{
+    text-decoration: none;
+}
+
 
 .box {
     /* background: #3498db; */
@@ -391,7 +445,9 @@ img {
     color: black;
     position: relative;
     top: 20px;
-    font-weight: bold;
+    width: 90%;
+    margin: 0 auto;
+    /* font-weight: bold; */
 }
 
 .box-comments
@@ -494,25 +550,51 @@ img {
     /* justify-content: center; */
     /* margin: auto; */
 }
-
+.insta-post a{
+    text-decoration: none;
+}
 
 .insta-box {
-    /* width: 305px;
-    height: 330px; */
+    position: relative;
+    width: 330px;
+    height: 330px;
     background-color: #ccc; 
 }
 
-.insta-box img{
+.insta-box a img{
     width: 100%; 
     height: 100%; 
     object-fit: cover; 
     /* border-radius: 25px 25px 0 0; */
 }
 
+.content-insta-box{
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    transition: 0.6s;
+}
 
+.content-insta-box p{
+    font-size: 14px;
+    color: #ffe100;
+}
+
+.content-insta-box:hover{
+    opacity: 1;
+}
+.content-insta-box:hover > *{
+    transform: translateY(0px);
+}
 
 /* instagram button  */
-/* From Uiverse.io by david-mohseni */ 
 .wrapper a{
     text-decoration: none;
     color: black;
@@ -626,7 +708,7 @@ img {
 {
     /* position: relative; */
     /* left: 65px; */
-    margin-bottom: 50px;
+    margin-bottom: 30px;
     width: 320px;
     text-align: start;
     
@@ -658,6 +740,7 @@ img {
     border: 2px solid transparent;
     font-size: 1rem;
     border: 1px solid white;
+    color: white;
     transition: border-color .3s cubic-bezier(.25,.01,.25,1) 0s, color .3s cubic-bezier(.25,.01,.25,1) 0s,background .2s cubic-bezier(.25,.01,.25,1) 0s;
 }
 
@@ -666,7 +749,7 @@ img {
     margin-bottom: .3rem;
     font-size: .9rem;
     /* font-weight: bold; */
-    color: #05060f99;
+    /* color: #05060f99; */
     transition: color .3s cubic-bezier(.25,.01,.25,1) 0s; 
     color: white;
     font-family: 'Poppins', sans-serif;
@@ -681,6 +764,15 @@ img {
 .subscribe-form-box{
     display: flex;
     gap: 0px; 
+    margin-bottom: 20px;
+}
+
+.worning-message{
+    color: red;
+    border: none;
+    display: none;
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
 }
 .subscribe-form-box-label
 {

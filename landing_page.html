@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Travelizo</title>
+    <link rel="icon" type="image/png" href="images/Logo_title_2.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
 </head>
@@ -18,12 +19,14 @@
             </div>
         </div>
 
+            <!-- Search Bar -->
         <div class="index-bar">
             <div class="search-bar">
-                <input class="input" type="search" name="text" placeholder="Search...">
-                    <svg fill="white" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
-                        <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
-                    </svg>
+                <input id="searchInput" class="input" type="search" name="text" placeholder="Search...">
+                <svg fill="white" width="20px" height="20px" viewBox="0 0 1920 1920" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M790.588 1468.235c-373.722 0-677.647-303.924-677.647-677.647 0-373.722 303.925-677.647 677.647-677.647 373.723 0 677.647 303.925 677.647 677.647 0 373.723-303.924 677.647-677.647 677.647Zm596.781-160.715c120.396-138.692 193.807-319.285 193.807-516.932C1581.176 354.748 1226.428 0 790.588 0S0 354.748 0 790.588s354.748 790.588 790.588 790.588c197.647 0 378.24-73.411 516.932-193.807l516.028 516.142 79.963-79.963-516.142-516.028Z" fill-rule="evenodd"></path>
+                </svg>
+                <div class="suggestions-box" id="suggestionsBox"></div>
             </div>
         </div>
 
@@ -54,8 +57,8 @@
     <!-- side bar section  -->
     <div class="side-bar-media">
         <div class="side-bar">
-            <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
-            <a href="https://www.facebook.com/facebook" target="_blank"><i class="fa-brands fa-instagram"></i></a>
+            <a href="https://www.facebook.com/facebook" target="_blank"><i class="fa-brands fa-facebook-f"></i></a>
+            <a href="https://www.instagram.com/instagram/" target="_blank"><i class="fa-brands fa-instagram"></i></a>
             <a href="https://x.com/" target="_blank"><i class="fa-brands fa-x-twitter"></i></a>
             <a href="https://www.youtube.com/" target="_blank"><i class="fa-brands fa-youtube"></i></a>
             <a href="https://www.pinterest.com/" target="_blank"><i class="fa-brands fa-pinterest-p"></i></a>
@@ -97,7 +100,7 @@
                                     </div>
                                 </div>
                                 <div class="link-page">
-                                    <a href="#">
+                                    <a href="post-details.html?postId=1">
                                         <div class="post-title-box">
                                             <h3>Top Hikes In Australia</h3>
                                         </div>
@@ -127,80 +130,84 @@
                 Recent Posts
             </span>
         </div>
-        <!-- <div class="gallary-post-section">
-            <div class="box">1</div>
-            <div class="box">2</div>
-            <div class="box">3</div>
-            <div class="box">4</div>
-            <div class="box">5</div>
-            <div class="box">6</div>
-        </div> -->
+
         <div class="gallary-post-section">
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 1">
-                </div>
-                <div class="box-content">
-                    <div class="box-title">Title 1</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
-                </div>
-            </div>
             
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 2">
+            <a href="post-details.html?postId=1">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">Top Hikes In Australia</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-                <div class="box-content">
-                    <div class="box-title">Title 2</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+            </a>
+            <a href="post-details.html?postId=2">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">5 Tips For Budget Travelers</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 3">
+            </a>
+            <a href="post-details.html?postId=3">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">The Most Amazing Diving Spots</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-                <div class="box-content">
-                    <div class="box-title">Title 3</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+            </a>
+            <a href="post-details.html?postId=4">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">5 Food Markets Around The World</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 4">
+            </a>
+            <a href="post-details.html?postId=5">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">Mexico: A Culinary Journey</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-                <div class="box-content">
-                    <div class="box-title">Title 4</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+            </a>
+            <a href="post-details.html?postId=6">
+                <div class="box">
+                    <div class="box-image">
+                        <img src="images/post.jpg" alt="Image 6">
+                    </div>
+                    <div class="box-content">
+                        <div class="box-title">Lessons From a Digital Nomad</div>
+                            <hr width="80%">
+                        <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
+                    </div>
                 </div>
-            </div>
-        
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 5">
-                </div>
-                <div class="box-content">
-                    <div class="box-title">Title 5</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
-                </div>
-            </div>
-        
-            <div class="box">
-                <div class="box-image">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="box-content">
-                    <div class="box-title">Title 6</div>
-                    <hr width="80%">
-                    <div class="box-comments"><i class="fa-regular fa-message"></i> o </div>
-                </div>
-            </div>
+            </a>
+            
+            
+            
         </div>
         
     </div>
@@ -226,15 +233,15 @@
         </div>
     </div>
 
+    <!-- instagram posts  -->
     <div class="top-insta-state">
 
         <div class="insta-state-title">
             <div class="insta-title">
                 <span>Follow Me In Instagram</span>
                 <!-- <a href="#" >@Instagram</a> -->
-                <!-- From Uiverse.io by david-mohseni --> 
                 <ul class="wrapper">
-                    <a href="https://www.instagram.com/instagram/">
+                    <a href="https://www.instagram.com/instagram/" target="_blank">
                         <li class="icon instagram">
                             <span class="tooltip">Instagram</span>
                                 <svg xmlns="http://www.w3.org/2000/svg" height="1.2em" fill="currentColor" class="bi bi-instagram" viewBox="0 0 16 16">
@@ -243,34 +250,70 @@
                             </li>
                     </a>
                 </ul>
-
             </div>
     
             <div class="insta-post">
                 <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
+                    <a href="https://www.instagram.com/p/DGqBJCNPc6h/?img_index=1 " target="_blank">
+                        <img src="images/instgram_image_1.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #thailand</p>
+                        </div>
+                    </a>
                 </div>
                 <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
+                    <a href="https://www.instagram.com/p/DGm5JYzx6T8/?img_index=2" target="_blank">
+                        <img src="images/instgram_image_2.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #thailand</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DHSDXM5hCew/?img_index=1" target="_blank">
+                        <img src="images/instgram_image_3.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #Korea</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DGXles-xeUP/?igsh=cGdxZHZuenpyNmlp" target="_blank">
+                        <img src="images/instgram_image_4.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #thailand</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DHKc8P_I3Y8/?igsh=YmN6b2thcXp3dmho" target="_blank">
+                        <img src="images/instgram_image_5.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #thailand</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DHnM6lnRkx0/?igsh=MXd3MHdnMnU4bmxyZA==" target="_blank">
+                        <img src="images/instgram_image_6.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #thailand</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DHLRrFGyFN0/?img_index=2&igsh=NjJjeWg5NHdrZDdr" target="_blank" >
+                        <img src="images/instgram_image_7.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #Japan</p>
+                        </div>
+                    </a>
+                </div><div class="insta-box">
+                    <a href="https://www.instagram.com/p/DHgKgTjN0RP/?img_index=1" target="_blank">
+                        <img src="images/instgram_image_8.jpg" alt="Image">
+                        <div class="content-insta-box">
+                            <p>#span #instagram #travel #china</p>
+                        </div>
+                    </a>
                 </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
-                <div class="insta-box">
-                    <img src="images/post.jpg" alt="Image 6">
-                </div>
+
+                
+                
             </div>
         </div>
     </div>
@@ -321,14 +364,15 @@
                         <button type="submit">Subscribe</button>
                     </div>
                 </form>
+                <div class="worning-message">
+                    <i class="fa-solid fa-circle-exclamation"></i>
+                </div>
             </div>
 
             <p class="copy-rule">&copy; 2025 Travels. All rights reserved.</p>
         </div>
 </footer>
 
+<script src="Scripts.js"></script>
 </body>
-
-
-
 </html>
