@@ -9,57 +9,57 @@ window.addEventListener("focus", () =>{
 
 
 document.addEventListener("DOMContentLoaded", function () {
-  const searchInput = document.getElementById("searchInput");
-  const suggestionsBox = document.getElementById("suggestionsBox");
+const searchInput = document.getElementById("searchInput");
+const suggestionsBox = document.getElementById("suggestionsBox");
 
-  let posts = [];
-  document.querySelectorAll(".gallary-post-section .box").forEach(box => {
-      posts.push(box.querySelector(".box-title").textContent.trim());
-  });
+let posts = [];
+document.querySelectorAll(".gallary-post-section .box").forEach(box => {
+posts.push(box.querySelector(".box-title").textContent.trim());
+});
 
-  searchInput.addEventListener("input", function () {
-      let searchValue = this.value.toLowerCase().trim();
-      suggestionsBox.innerHTML = "";
+searchInput.addEventListener("input", function () {
+    let searchValue = this.value.toLowerCase().trim();
+    suggestionsBox.innerHTML = "";
 
-      if (searchValue === "") {
-          suggestionsBox.style.display = "none";
-          return;
-      }
+    if (searchValue === "") {
+        suggestionsBox.style.display = "none";
+        return;
+    }
 
-      let filteredPosts = posts.filter(post => post.toLowerCase().includes(searchValue));
+    let filteredPosts = posts.filter(post => post.toLowerCase().includes(searchValue));
 
-      if (filteredPosts.length > 0) {
-          filteredPosts.forEach(post => {
-              let div = document.createElement("div");
-              div.classList.add("suggestion");
-              div.textContent = post;
+    if (filteredPosts.length > 0) {
+        filteredPosts.forEach(post => {
+            let div = document.createElement("div");
+            div.classList.add("suggestion");
+            div.textContent = post;
 
-              div.addEventListener("click", function () {
-                  searchInput.value = post;
-                  suggestionsBox.style.display = "none";
+            div.addEventListener("click", function () {
+                searchInput.value = post;
+                suggestionsBox.style.display = "none";
 
-                  document.querySelectorAll(".gallary-post-section .box").forEach(box => {
-                      if (box.querySelector(".box-title").textContent.trim() === post) {
-                          box.scrollIntoView({ behavior: "smooth" });
-                      }
-                  });
-                  searchInput.value = '';
-              });
+                document.querySelectorAll(".gallary-post-section .box").forEach(box => {
+                    if (box.querySelector(".box-title").textContent.trim() === post) {
+                        box.scrollIntoView({ behavior: "smooth" });
+                    }
+                });
+                searchInput.value = '';
+            });
 
-              suggestionsBox.appendChild(div);
-          });
+            suggestionsBox.appendChild(div);
+        });
 
-          suggestionsBox.style.display = "block";
-      } else {
-          suggestionsBox.style.display = "none";
-      }
-  });
+        suggestionsBox.style.display = "block";
+    } else {
+        suggestionsBox.style.display = "none";
+    }
+});
 
-  document.addEventListener("click", function (e) {
-      if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
-          suggestionsBox.style.display = "none";
-      }
-  });
+document.addEventListener("click", function (e) {
+    if (!searchInput.contains(e.target) && !suggestionsBox.contains(e.target)) {
+        suggestionsBox.style.display = "none";
+    }
+});
 });
 
 

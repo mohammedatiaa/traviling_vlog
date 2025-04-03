@@ -94,8 +94,6 @@
     color: white;
 }
 
-
-
 .suggestions-box {
     position: absolute;
     top: 100%;
@@ -140,8 +138,6 @@
 .suggestion:hover {
     background-color: #f8f9fa;
 }
-
-
 
 
 /* page logo  */
